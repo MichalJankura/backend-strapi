@@ -2,6 +2,6 @@ export default ({ env }: { env: any }) => ({
   host: env('HOST', '0.0.0.0'),
   port: env.int('PORT', 1337),
   app: {
-    keys: env.array('APP_KEYS', ['DZ28dTCf/VwbcYhixNM2j1JiZ0t8PrCarxSoEPFgpGg=']),
+    keys: env.array('APP_KEYS', ['hj58Pd+xKz4r8tq9M3YWxA==', 'Bqm8PdXKz4r8tq9M3YWxA==', 'Hjm8Pd+xKz4r8tq9M3YWxA==', 'Kjm8Pd+xKz4r8tq9M3YWxA==']),
   },
 });
