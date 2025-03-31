@@ -60,21 +60,19 @@
   // };
 
 
-  export default ({ env }) => ({
+export default ({ env }) => ({
+  connection: {
+    client: 'postgres',
     connection: {
-      client: 'postgres',
-      connection: {
-        host: env('PGHOST'),
-        port: 5432,
-        database: env('PGDATABASE'),
-        user: env('PGUSER'),
-        password: env('PGPASSWORD'),
-        ssl: {
-          rejectUnauthorized: false
-        },
-        schema: env('DATABASE_SCHEMA', 'public'),
-      },
-      pool: { min: 2, max: 10 },
-      acquireConnectionTimeout: 60000,
+      host: env('PGHOST'),
+      port: 5432,
+      database: env('PGDATABASE'),
+      user: env('PGUSER'),
+      password: env('PGPASSWORD'),
+      ssl: { rejectUnauthorized: false },  // Ensure SSL is properly set
+      schema: env('DATABASE_SCHEMA', 'public'),
     },
-  });
+    pool: { min: 2, max: 10 },
+  },
+});
+
